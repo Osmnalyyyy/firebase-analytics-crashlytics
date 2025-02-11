@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
         veriBundle.putString("kullanici", "osman")
         firebaseAnalytics.logEvent("favarilereEkleTiklandi", veriBundle)// event ekledik
 
+        throw RuntimeException("Test crash")   //crashlytics   raporlara eklenir
     }
 }
 
