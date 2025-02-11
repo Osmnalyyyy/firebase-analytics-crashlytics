@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678766983081",
+    "project_id": "fir-analyticscrashlytics-9185b",
+    "storage_bucket": "fir-analyticscrashlytics-9185b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678766983081:android:1ecbc01afbe67a8e2276b8",
+        "android_client_info": {
+          "package_name": "com.osman.firebaseanalyticscrashlytics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUf_p4OflU5oUd874BWbXq1Wt17Yxcu74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
