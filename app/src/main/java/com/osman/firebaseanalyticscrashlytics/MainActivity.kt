@@ -1,32 +1,37 @@
 package com.osman.firebaseanalyticscrashlytics
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.osman.firebaseanalyticscrashlytics.databinding.ActivityMainBinding
 import com.osman.firebaseanalyticscrashlytics.ui.theme.FirebaseAnalyticsCrashlyticsTheme
 
 class MainActivity : ComponentActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            FirebaseAnalyticsCrashlyticsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+        binding = ActivityMainBinding.inflate(layoutInflater) // Burada inflate et
+        setContentView(binding.root)
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+
+    }
+
+
+    fun favorilereEklendi(view: View) {
+        val veriBundle = Bundle()
+        veriBundle.putString("kullanici", "osman")
+        firebaseAnalytics.logEvent("favarilereEkleTiklandi", veriBundle)// event ekledik
+
     }
 }
 
